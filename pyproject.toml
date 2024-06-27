@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdbfixer"
+version = "1.9.0"
+description = "pdbfixer: Fixes problems in PDB files"
+readme = "README.md"  # Assuming you have a README.md file
+requires-python = ">=3.6"
+license = { text = "MIT" }
+authors = [
+    { name = "Peter Eastman" }
+]
+maintainers = [
+    { name = "Peter Eastman" }
+]
+urls = { "Homepage" = "https://github.com/openmm/pdbfixer" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS"
+]
+keywords = ["PDB", "molecular dynamics", "simulation", "bioinformatics"]
+
+dependencies = [
+	"numpy == 1.24.3",
+	"openmm >=7.1"
+]
+[project.optional-dependencies]
+dev = []
+test = []
+
+[project.scripts]
+pdbfixer = "pdbfixer.pdbfixer:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdbfixer*"]
+
+[tool.setuptools.package-data]
+"pdbfixer" = ["*"]
+
